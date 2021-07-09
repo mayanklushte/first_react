@@ -1,20 +1,14 @@
 import "./App.css";
-import Demo from "./components/Demo";
-import Data from "./components/Data";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ShowData from "./components/ShowData";
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Demo />
-        </Route>
-        <Route path="/data" exact>
-          <Data />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <ShowData num1={12} num2={43} />
+      <ShowData num1={50} num2={100} />
+      <ShowData num1={1000} num2={3000} />
+      <ShowData num1={10000} num2={30000} />
+    </div>
   );
 }
 
