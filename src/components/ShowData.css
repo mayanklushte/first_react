@@ -2,12 +2,10 @@ body {
   padding: 2px 2px 2px 2px;
 }
 
-.container {
-  padding: 10px 10px 10px 10px;
-  border: 2px solid black;
-  background-color: cyan;
-}
-
 h1 {
   color: red;
+}
+
+.data {
+  background-color: rgb(115, 207, 207);
 }

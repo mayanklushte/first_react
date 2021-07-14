@@ -1,11 +1,13 @@
 import "./ShowData.css";
+import Heading from "./Heading";
+import Container from "./Container";
 
-function ShowData({ num1, num2 }) {
+function ShowData({ num1, num2, heading }) {
   return (
-    <div className="container">
-      <h1>Addition of Two Numbers</h1>
+    <Container className="data">
+      <Heading headings={heading} />
       Result: <h5>{num1 + num2}</h5>
-    </div>
+    </Container>
   );
 }
 
