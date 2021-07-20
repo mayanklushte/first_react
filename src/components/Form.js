@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Calculate from "./Calculate";
 
-const Form = () => {
+const Form = ({ demo }) => {
   const [num1, setnum1] = useState("");
   const [num2, setnum2] = useState("");
   const [date, setdate] = useState("");
@@ -24,25 +23,34 @@ const Form = () => {
     });
   }
 
+  function formSubmit() {
+    const data = {
+      num1: num1,
+      num2: num2,
+      date: date,
+    };
+
+    demo(data);
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={formSubmit}>
         <label>Number 1:</label>
         <br />
-        <input type="number" onChange={num1handler} />
+        <input type="number" value={num1} onChange={num1handler} />
         <br />
         <label>Number 2:</label>
         <br />
-        <input type="number" onChange={num2handler} />
+        <input type="number" value={num2} onChange={num2handler} />
         <br />
         <label>Date</label>
         <br />
-        <input type="date" onChange={datehandler} />
+        <input type="date" value={date} onChange={datehandler} />
         <br />
 
         <button type="submit">Calculate</button>
       </form>
-      <Calculate num1={num1} num2={num2} date={date} />
     </div>
   );
 };
